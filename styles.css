@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+:root {
+    --mainFont : 'Tilt Neon', cursive;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+.page {
+    width: 1024px;
+    margin: auto;
+    max-width: 98%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.gameSide {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.gameSide .head {
+    font-size: 32px;
+    font-family: var(--mainFont);
+    text-align: center;
+}
+
+.gameSide .game {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.gameBoard::-webkit-scrollbar {
+    width: 6px;
+}
+
+.gameBoard::-webkit-scrollbar-track {
+    background-color: #333333;
+    border-radius: 0 4px 4px 0;
+}
+
+.gameBoard::-webkit-scrollbar-thumb {
+    background-color: #fff;
+}
+
+.game .gameBoard {
+    width: 400px;
+    height: 400px;
+    background-color: #232323;
+    border-radius: 4px;
+    overflow-y: scroll;
+    box-shadow: 2px 2px 4px 2px #23232310;
+    padding: 12px 4px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.2rem;
+
+    transition: 0.4s ease;
+}
+
+.whoSide span {
+    font-family: var(--mainFont);
+    font-size: 20px;
+}
+
+.gameBoard .initially {
+    font-family: var(--mainFont);
+    font-size: 20px;
+    color: #fff;
+    padding: 8px;
+    text-align: center;
+}
+
+.playerGameDiv {
+    width: 100%;
+    padding: 8px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.8rem;
+    background-color: #4746468f;
+    transition: all 0.4s ease;
+}
+
+.computerGameDiv {
+    width: 100%;
+    padding: 8px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.8rem;
+    background-color: #505050db;
+    transition: all 0.4s ease;
+}
+
+.itsPlayer {
+    font-family: var(--mainFont);
+    font-size: 18px;
+    color: rgb(202, 0, 0);
+}
+
+.itsComputer {
+    font-family: var(--mainFont);
+    font-size: 18px;
+    color: rgb(224, 168, 0);
+}
+
+.showTime {
+    width: 98px;
+    height: 32px;
+    padding: 2px 4px;
+    text-align: center;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0.3rem;
+    background-color: #fff;
+    color: #232323;
+    font-family: var(--mainFont);
+    font-size: 16px;
+}
+
+.showImage {
+    width: 24px;
+    height: 24px;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.game .gamePlay {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.gamePlay button {
+    padding: 4px 8px;
+    outline: none;
+    border: 1px solid #232323;
+    background: #232323;
+    color: #fff;
+    border-radius: 4px;
+    font-family: var(--mainFont);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.scoreSide {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.scoreSide .head {
+    font-size: 28px;
+    font-family: var(--mainFont);
+}
+
+.scoreSide .score {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.score .scoreCard {
+    font-family: var(--mainFont);
+    font-size: 18px;
+}
+
+.resetGame {
+    background: #fff;
+    color: #232323;
+    padding: 4px 8px;
+    font-family: var(--mainFont);
+    font-size: 18px;
+    border-radius: 4px;
+    outline: none;
+    border: 2px solid #232323;
+    cursor: pointer;
+}
+
+@media only screen and (max-width : 700px) {
+
+    .scoreSide {
+        width: 100%;
+    }
+
+    .page {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        padding: 0.4rem;
+    }
+}
+
+@media only screen and (max-width : 450px) {
+
+    .page {
+        width: 100%;
+    }
+
+    .gameSide {
+        width: 100%;
+    }
+
+    .gameSide .head {
+        font-size: 28px;
+    }
+
+    .game {
+        width: 100%;
+    }
+
+    .game .gameBoard {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width : 400px) {
+    .page {
+        padding: 12px 0;
+    }
+}
