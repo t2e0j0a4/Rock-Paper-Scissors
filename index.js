@@ -110,7 +110,7 @@ function handleButtonClick(show) {
         gameButtons.forEach((button) => {
           button.disabled = false;
         });
-    }, 2000);
+    }, 800);
 
 }
 
@@ -128,5 +128,5 @@ resetGame.addEventListener('click', () => {
     setTimeout(() => {
         resetCompleteGame();
         resetGame.disabled = false;
-    }, 3000)
+    }, 1000)
 });
