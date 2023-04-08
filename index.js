@@ -46,21 +46,36 @@ function handleButtonClick(show) {
     let computerChance = computerShows[chooseRandomlyOne()]
 
     gameWins.forEach((wins) => {
-        let {win, lose} = wins;
+      let { win, lose } = wins;
+      let winner = document.createElement("span");
+      winner.classList.add("initially");
+
         if (playerChance === win && computerChance === lose) {
-            playerPlays = playerPlays + 1
+            playerPlays = playerPlays + 1;
+            setTimeout(() => {
+            winner.innerHTML = "Player +1";
+            gameBoard.append(winner);
+            toScrollTheBoard();
+            }, 850);
         }
+
         if (computerChance === win && playerChance === lose) {
             computerPlays = computerPlays + 1;
+            setTimeout(() => {
+                winner.innerHTML = 'Computer +1';
+                gameBoard.append(winner);
+                toScrollTheBoard();
+            }, 810);
         }
-    })
+
+    });
     
     // Player's Time.
     let playerGameDiv = document.createElement('div');
     playerGameDiv.classList.add('playerGameDiv');
     let itsPlayer = document.createElement('span');
     itsPlayer.classList.add('itsPlayer');
-    itsPlayer.innerHTML = 'P';
+    itsPlayer.innerHTML = 'Player';
 
     let playerShow = document.createElement('span');
     playerShow.classList.add('playerShow','showTime');
@@ -75,7 +90,7 @@ function handleButtonClick(show) {
     computerGameDiv.classList.add('computerGameDiv');
     let itsComputer = document.createElement('span');
     itsComputer.classList.add('itsComputer');
-    itsComputer.innerHTML = 'C';
+    itsComputer.innerHTML = 'Computer';
 
     let computerShow = document.createElement("span");
     computerShow.classList.add('computerShow','showTime');
@@ -84,8 +99,6 @@ function handleButtonClick(show) {
     computerShowImage.setAttribute("src", `./Assets/${computerChance}.png`);
     computerShowImage.setAttribute('alt', computerChance);
     computerShowImage.classList.add("showImage");
-    
-    playerShow.innerHTML = playerChance;
 
     playerShow.append(playerShowImage);
 
@@ -100,7 +113,6 @@ function handleButtonClick(show) {
     })
 
     setTimeout(() => {
-        computerShow.innerHTML = computerChance;
         computerShow.append(computerShowImage);
         computerGameDiv.append(computerShow, itsComputer);
         gameBoard.append(computerGameDiv);
@@ -110,7 +122,7 @@ function handleButtonClick(show) {
         gameButtons.forEach((button) => {
           button.disabled = false;
         });
-    }, 800);
+    }, 0);
 
 }
 
